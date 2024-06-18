@@ -13,7 +13,17 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+//                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+//                sans: ['"Pixelify Sans"', ...defaultTheme.fontFamily.sans],
+//                sans: ['"Proxima Nova"', ...defaultTheme.fontFamily.sans],
+                sans: ['Poppins', ...defaultTheme.fontFamily.sans],
+//                pixelFont: ['"Public Pixel"', "sans-serif"],
+            },
+            fontSize: {
+                '12xl': '192px'
+            },
+            screens: {
+                'lt': {'min': '411px', 'max': '639px'}
             },
         },
     },

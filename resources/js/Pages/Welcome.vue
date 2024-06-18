@@ -18,16 +18,10 @@ defineProps({
     },
 });
 
-function handleImageError() {
-    document.getElementById('screenshot-container')?.classList.add('!hidden');
-    document.getElementById('docs-card')?.classList.add('!row-span-1');
-    document.getElementById('docs-card-content')?.classList.add('!flex-row');
-    document.getElementById('background')?.classList.add('!hidden');
-}
 </script>
 
 <template>
-    <Head title="Welcome" />
+    <!--<Head title="Welcome" />-->
     <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
         <img
             id="background"
@@ -176,6 +170,7 @@ function handleImageError() {
 
                             <div class="pt-3 sm:pt-5">
                                 <h2 class="text-xl font-semibold text-black dark:text-white">Laracasts</h2>
+                                <h2 class="font-pixelFont">Laracasts</h2>
 
                                 <p class="mt-4 text-sm/relaxed">
                                     Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript
