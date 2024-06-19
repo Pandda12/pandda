@@ -25,6 +25,18 @@ const toggleMenu = () => {
     showMobileMenu.value = !showMobileMenu.value;
 };
 
+const x = ref(0);
+const y = ref(0);
+
+// Function to update mouse position
+const updateMousePosition = (event) => {
+    x.value = event.clientX;
+    y.value = event.clientY;
+};
+
+
+window.addEventListener('mousemove', updateMousePosition);
+
 defineProps({
     laravelVersion: {
         type: String,
@@ -170,13 +182,13 @@ function scrollTo(section) {
                 </a>
                 <!-- <a class="ml-2" href="https://github.com/Pandda12" target="_blank">GitHub</a> -->
             </div>
-            <div class="flex">
-                <Mail :x="50" :y="50" />
-                <!-- <a class="ml-2" href="https://github.com/Pandda12" target="_blank">GitHub</a> -->
-            </div>
+            
         </div>
-        Build with Laravel v{{ laravelVersion }} (PHP v{{ phpVersion }})
+
     </footer>
+    <!-- <div id="cursor" :style="{ left: `${x}px`, top: `${y}px` }"></div> -->
+    <div id="cursor" :style="{ transform: `translate(${x}px, ${y}px)` }"></div>
+    <div id="cursor-center" :style="{ left: `${x}px`, top: `${y}px` }"></div>
 </div>
 </template>
 
@@ -193,5 +205,31 @@ header nav{
 }
 .mobile_menu #close_mobile_menu{
     display: flex;
+}
+#cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    margin-left: -15px;
+    margin-top: -15px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid #66d9ed;
+    border-radius: 50%;
+    transition: all .08s ease-out;
+}
+#cursor-center{
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    margin-left: -3px;
+    margin-top: -3px;
+    width: 6px;
+    height: 6px;
+    background-color: #66d9ed;
+    border-radius: 50%;
 }
 </style>
