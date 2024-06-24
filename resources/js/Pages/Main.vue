@@ -1,6 +1,6 @@
 <script setup>
 import {Head, Link} from "@inertiajs/vue3";
-import {ref} from 'vue'
+import {onMounted, onUnmounted, ref} from 'vue'
 
 import WordPressLogo from "../Components/Logo/WordPressLogo.vue";
 import LaravelLogo from "../Components/Logo/LaravelLogo.vue";
@@ -20,22 +20,28 @@ const work = ref(null);
 const experience = ref(null);
 
 const showMobileMenu = ref(false)
+const x = ref(0);
+const y = ref(0);
+
 
 const toggleMenu = () => {
     showMobileMenu.value = !showMobileMenu.value;
 };
 
-const x = ref(0);
-const y = ref(0);
 
-// Function to update mouse position
 const updateMousePosition = (event) => {
     x.value = event.clientX;
     y.value = event.clientY;
 };
 
+onMounted(() => {
+    window.addEventListener('mousemove', updateMousePosition);
+});
 
-window.addEventListener('mousemove', updateMousePosition);
+onUnmounted(() => {
+    window.removeEventListener('mousemove', updateMousePosition);
+});
+
 
 defineProps({
     laravelVersion: {
@@ -55,11 +61,15 @@ function scrollTo(section) {
     section?.scrollIntoView({ behavior: 'smooth' }) 
 }
 
+
 </script>
 
 <template>
 <Head title="PHP Developer, Fullstack Developer" />
-<div class="bg-stone-900">
+<div
+    class="bg-stone-900"
+
+>
     <header class="fixed top-0 w-full h-14">
         <nav class="">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -133,8 +143,10 @@ function scrollTo(section) {
     <section class="min-h-svh flex flex-col justify-center items-center text-white" ref="work">
         <div class="text-7xl text-center font-semibold mb-8 p-6 sm:text-6xl lt:text-5xl">My Work</div>
         <div class="grid lg:grid-cols-3 sm:grid-cols-2 lt:grid-cols-1 gap-10 p-6">
-            <div class="flex flex-col w-72 pb-8 items-center rounded-xl bg-zinc-800">
-                <img class="rounded-t-xl" src="/images/projects/iskamed.by.png" alt="iskamed.by" />
+            <div class="group flex flex-col w-72 pb-8 items-center rounded-xl bg-zinc-800">
+                <div class="relative overflow-hidden rounded-t-xl">
+                    <img class="rounded-t-xl group-hover:scale-125 transition-all duration-500" src="/images/projects/iskamed.by.png" alt="iskamed.by" />
+                </div>
                 <div class="text-2xl mt-6">ISKAMED (B2C)</div>
             </div>
         </div>
@@ -193,6 +205,9 @@ function scrollTo(section) {
 </template>
 
 <style>
+body{
+    background-color: #1B1917;
+}
 header nav{
     backdrop-filter: saturate(180%) blur(20px);
 }

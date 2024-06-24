@@ -31,7 +31,6 @@ services:
         - app-network
 
   db:
-    platform: linux/x86_64
     image: mariadb:11.2.2
     restart: always
     volumes:
@@ -47,7 +46,6 @@ services:
         - app-network
 
   node:
-      platform: linux/arm64/v8
       build:
           context: .
           dockerfile: _docker/node/Dockerfile.node
