@@ -94,7 +94,7 @@ function scrollTo(section) {
                 </button>
                 <div
                     id="navbar-default"
-                    class="hidden w-full md:block md:w-auto lt:bg-stone-900 lt:-left-full lt:opacity-0 lt:fixed lt:flex lt:h-svh lt:top-0 transition-all duration-500 ease-in-out lt:mobile-menu"
+                    class="hidden w-full md:block md:w-auto lt:bg-stone-900 lt:-left-full lt:opacity-0 lt:fixed lt:flex lt:h-svh lt:top-0 lt:z-10 transition-all duration-500 ease-in-out lt:mobile-menu"
                     :class="{'mobile_menu': showMobileMenu}"
                 >
                     <ul class="font-medium flex flex-col p-4 md:p-0 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-transparent lt:bg-slate-50">
@@ -144,7 +144,7 @@ function scrollTo(section) {
         <div class="text-7xl text-center font-semibold mb-8 p-6 sm:text-6xl lt:text-5xl">My Work</div>
         <div class="grid lg:grid-cols-3 sm:grid-cols-2 lt:grid-cols-1 gap-10 p-6">
             <div class="group flex flex-col w-72 pb-8 items-center rounded-xl bg-zinc-800">
-                <div class="relative overflow-hidden rounded-t-xl">
+                <div class="static overflow-hidden rounded-t-xl">
                     <img class="rounded-t-xl group-hover:scale-125 transition-all duration-500" src="/images/projects/iskamed.by.png" alt="iskamed.by" />
                 </div>
                 <div class="text-2xl mt-6">ISKAMED (B2C)</div>
@@ -199,8 +199,8 @@ function scrollTo(section) {
 
     </footer>
     <!-- <div id="cursor" :style="{ left: `${x}px`, top: `${y}px` }"></div> -->
-    <div id="cursor" :style="{ transform: `translate(${x}px, ${y}px)` }"></div>
-    <div id="cursor-center" :style="{ left: `${x}px`, top: `${y}px` }"></div>
+    <div id="cursor" class="lg:block hidden" :style="{ transform: `translate(${x}px, ${y}px)` }"></div>
+    <div id="cursor-center" class="lg:block hidden" :style="{ left: `${x}px`, top: `${y}px` }"></div>
 </div>
 </template>
 
