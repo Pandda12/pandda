@@ -34,7 +34,10 @@ const updateMousePosition = (event) => {
     y.value = event.clientY;
 };
 
+
 onMounted(() => {
+
+    window.addEventListener('load', updateMousePosition);
     window.addEventListener('mousemove', updateMousePosition);
 });
 
@@ -57,10 +60,12 @@ defineProps({
 function scrollTo(section) {
 
     showMobileMenu.value = false;
-    
-    section?.scrollIntoView({ behavior: 'smooth' }) 
+
+    section?.scrollIntoView({ behavior: 'smooth' })
 }
 
+
+window.addEventListener('load', updateMousePosition);
 
 </script>
 
@@ -103,7 +108,7 @@ function scrollTo(section) {
                         </li>
                         <li>
                             <button class="px-8 text-white lt:text-stone-900 lt:py-2" @click="scrollTo(home)">Home</button>
-                        </li>  
+                        </li>
                         <li>
                             <button class="px-8 text-white lt:text-stone-900 lt:py-2" @click="scrollTo(technologies)">Technologies</button>
                         </li>
@@ -123,7 +128,7 @@ function scrollTo(section) {
         <h1 class="text-12xl font-semibold text-center sm:text-9xl lt:text-8xl">Pandda</h1>
         <div class="uppercase text-2xl font-semibold mt-3 p-6">PHP Developer, Fullstack Developer</div>
     </section>
-    <section class="min-h-svh flex flex-col justify-center items-center text-white" ref="technologies">
+    <section class="min-h-svh flex flex-col justify-center items-center text-white lt:scroll-mt-20" ref="technologies">
         <div class="text-7xl text-center font-semibold mb-8 p-6 sm:text-6xl lt:text-5xl">Technologies</div>
         <div class="grid lg:grid-cols-3 sm:grid-cols-2 lt:grid-cols-1 gap-10 p-6 lt:justify-center">
             <div class="flex flex-col w-72 py-8 items-center rounded-xl border border-gray-600">
@@ -140,7 +145,7 @@ function scrollTo(section) {
             </div>
         </div>
     </section>
-    <section class="min-h-svh flex flex-col justify-center items-center text-white" ref="work">
+    <section class="min-h-svh flex flex-col justify-center items-center text-white lt:scroll-mt-20" ref="work">
         <div class="text-7xl text-center font-semibold mb-8 p-6 sm:text-6xl lt:text-5xl">My Work</div>
         <div class="grid lg:grid-cols-3 sm:grid-cols-2 lt:grid-cols-1 gap-10 p-6">
             <div class="group flex flex-col w-72 pb-8 items-center rounded-xl bg-zinc-800">
@@ -151,7 +156,7 @@ function scrollTo(section) {
             </div>
         </div>
     </section>
-    <section class="min-h-svh max-w-7xl mx-auto flex flex-col justify-center items-center text-white" ref="experience">
+    <section class="min-h-svh max-w-7xl mx-auto flex flex-col justify-center items-center text-white lt:scroll-mt-20" ref="experience">
         <div class="text-7xl text-center font-semibold mb-8 p-6 sm:text-6xl lt:text-5xl">Professional Experience</div>
         <div class="flex flex-col w-full items-center gap-10">
             <div class="flex flex-col w-3/4 py-8 px-16 items-center rounded-xl border border-gray-600">
@@ -165,17 +170,17 @@ function scrollTo(section) {
                         <div class="w-full text-base">Building and optimizing two WordPress e-commerce websites, incorporating jQuery AJAX for dynamic content loading, developing custom plugins, and utilizing REST API for seamless data interaction.</div>
                         <div class="flex gap-10 w-full mt-6 lg:flex-row sm:flex-col lt:flex-col lt:gap-5">
                             <div class="w-fit bg-white text-black px-4 py-1 rounded-full">WordPress</div>
-                            <div class="w-fit bg-white text-black px-4 py-1 rounded-full">jQuery</div>
-                            <div class="w-fit bg-white text-black px-4 py-1 rounded-full">AJAX</div>
-                            <div class="w-fit bg-white text-black px-4 py-1 rounded-full">Swiper</div>
+                            <div class="w-fit bg-white text-black px-4 py-1 rounded-full">WooCommerce</div>
                             <div class="w-fit bg-white text-black px-4 py-1 rounded-full">REST API</div>
+                            <div class="w-fit bg-white text-black px-4 py-1 rounded-full">jQuery AJAX</div>
+                            <div class="w-fit bg-white text-black px-4 py-1 rounded-full">Swiper</div>
                         </div>
                     </div>
                     <div class="flex justify-center items-center">
                         <IskamedLogo :x="90" :y="90" />
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </section>
@@ -194,7 +199,7 @@ function scrollTo(section) {
                 </a>
                 <!-- <a class="ml-2" href="https://github.com/Pandda12" target="_blank">GitHub</a> -->
             </div>
-            
+
         </div>
 
     </footer>
