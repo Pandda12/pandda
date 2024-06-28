@@ -1,0 +1,1 @@
+import{o as e,f as r,a,u as t,F as o,Z as s}from"./app-DfeWQ-HL.js";import{_ as n}from"./DashboardLayout-dHIpq7H0.js";import"./ApplicationLogo-Cf3PrB2Q.js";const u={__name:"Dashboard",setup(_){return(c,m)=>(e(),r(o,null,[a(t(s),{title:"Dashboard"}),a(n)],64))}};export{u as default};

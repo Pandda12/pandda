@@ -1,0 +1,1 @@
+import{_ as e}from"./DashboardLayout-dHIpq7H0.js";import{o,c as t,w as a,d as c}from"./app-DfeWQ-HL.js";import"./ApplicationLogo-Cf3PrB2Q.js";const m={__name:"Index",setup(r){return(s,_)=>(o(),t(e,{page:"Technologies"},{default:a(()=>[c(" My Technologies ")]),_:1}))}};export{m as default};
