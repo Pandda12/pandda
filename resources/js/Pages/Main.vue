@@ -168,7 +168,7 @@ window.addEventListener('load', updateMousePosition);
                             <div class="flex items-baseline"><LinkIcon :x="16" :y="16" /><a class="ml-2" href="https://ltd.iskamed.by/" target="_blank" rel="noopener noreferrer">ltd.iskamed.by</a></div>
                         </div>
                         <div class="w-full text-base">Building and optimizing two WordPress e-commerce websites, incorporating jQuery AJAX for dynamic content loading, developing custom plugins, and utilizing REST API for seamless data interaction.</div>
-                        <div class="flex gap-10 w-full mt-6 lg:flex-row sm:flex-col lt:flex-col lt:gap-5">
+                        <div class="flex flex-wrap gap-x-10 gap-y-7 w-full mt-6 lg:flex-row sm:flex-col lt:flex-col lt:gap-5">
                             <div class="w-fit bg-white text-black px-4 py-1 rounded-full">WordPress</div>
                             <div class="w-fit bg-white text-black px-4 py-1 rounded-full">WooCommerce</div>
                             <div class="w-fit bg-white text-black px-4 py-1 rounded-full">REST API</div>
